@@ -34,16 +34,25 @@ bool Course::hasStudent(Student student) {
 
 bool Course::addStudent(Student student) {
     students.push_back(student.getId());
+    return true;
 }
 
 void Course::dropStudent(Student student) {
-    students.erase(remove(students.begin(),students.end(),student.getId()),students.end());
+    string studentId = to_string(student.getId());
+    students.erase(
+        remove(students.begin(), students.end(), studentId),
+        students.end()
+    );
 }
 
 void Course::printDetails() {
 cout << "Courses: " << endl;
-    cout << "Courses ID: " << id << ", Name: " << name << ", Credits: " << credits << endl;
-    cout << students.size() << endl;
+    cout << "Course ID: " << id << ", Name: " << name << ", Credits: " << credits << endl;
+    cout << "Enrolled Students: ";
+    for (int i = 0; i < students.size(); i++) {
+        cout << students[i] << " ";
+    }
+    cout << endl;
 }
 
 

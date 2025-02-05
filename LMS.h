@@ -13,9 +13,10 @@ class LMS {
     vector<Course> courses;
 public:
     LMS(string name);
+
     void addStudent(Student);
     void addCourse(Course);
-    void addStudentToCourse(Student, Course);
+    void addStudentToCourse(int student_id, string course_id);
     void printDetails();
 };
 

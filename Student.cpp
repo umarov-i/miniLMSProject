@@ -33,21 +33,22 @@ bool Student::takesCourse(Course course) {
 
 bool Student::takeCourse(Course course) {
     if(takesCourse(course)) {
-        return true;
-    } else {
-        if(course.getCredits()<MAX_ALLOWED_CREDITS) {
-            enrolledCourses.push_back(stoi(course.getId()));
-        }
+        return false;
     }
+        if(course.getCredits() <= MAX_ALLOWED_CREDITS) {
+            enrolledCourses.push_back(stoi(course.getId()));
+            return true;
+        }
     return false;
 }
 
 void Student::dropCourse(Course course) {
-    int courseId = std::stoi(course.getId());
+    int courseId = stoi(course.getId());
     enrolledCourses.erase(
-        std::remove(enrolledCourses.begin(), enrolledCourses.end(), courseId),
+        remove(enrolledCourses.begin(), enrolledCourses.end(), courseId),
         enrolledCourses.end()
-    );}
+    );
+}
 
 void Student::printDetails() {
     cout << "Student ID: " << id << ", Name: " << name << endl;
