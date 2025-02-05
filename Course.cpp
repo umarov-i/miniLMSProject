@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
+#include <string>
 #include "Course.h"
 #include "Student.h"
-#include <algorithm>
 using namespace std;
 
 Course::Course(int id, string name, int credits) {

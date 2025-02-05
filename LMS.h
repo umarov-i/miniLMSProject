@@ -1,10 +1,10 @@
 #ifndef LMS_H
 #define LMS_H
-
+#include "Course.h"
+#include "Student.h"
 #include <iostream>
 #include <vector>
-class Student;
-class Course;
+
 using namespace std;
 
 class LMS {
@@ -14,9 +14,9 @@ class LMS {
 public:
     LMS(string name);
 
-    void addStudent(Student);
-    void addCourse(Course);
-    void addStudentToCourse(int student_id, int course_id);
+    void addStudent(Student student);
+    void addCourse(Course course);
+    void addStudentToCourse(int student, int course);
     void printDetails();
 };
 

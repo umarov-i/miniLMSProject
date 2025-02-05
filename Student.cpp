@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
+#include <string>
 #include "Student.h"
-
+#include "Course.h"
 using namespace std;
 
 Student::Student(int id, string name) {
@@ -10,11 +10,11 @@ Student::Student(int id, string name) {
     this->name = name;
 }
 
-int Student::getId () const{
+int Student::getId () {
     return id;
 }
 
-string Student::getName() const{
+string Student::getName() {
     return name;
 }
 

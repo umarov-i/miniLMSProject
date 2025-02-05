@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include "LMS.h"
 #include "Student.h"
 #include "Course.h"
@@ -23,7 +22,7 @@ void LMS::addStudentToCourse(int student_id,int course_id) {
             for (int j = 0; j < this->students.size(); j++) {
                 if (student_id == this->students[j].getId()) {
                     courses[i].addStudent(students[j]);
-                    students.erase(students.begin() + j);
+                    students[j].takeCourse(courses[i]);
                 }
 
             }
