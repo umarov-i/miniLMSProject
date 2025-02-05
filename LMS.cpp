@@ -19,7 +19,7 @@ void LMS::addCourse(Course course) {
 
 void LMS::addStudentToCourse(int student_id,string course_id) {
     for (int i = 0; i < this->courses.size(); i++) {
-        if (course_id == stoi(this->courses[i].getId())) {
+        if (course_id == this->courses[i].getId()) {
             for (int j = 0; j < this->students.size(); j++) {
                 if (student_id == this->students[j].getId()) {
                     if(courses[i].addStudent(students[j]) && !students[j].takeCourse(courses[i])) {
