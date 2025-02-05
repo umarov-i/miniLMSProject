@@ -17,9 +17,9 @@ public:
     int getId() const;
     string getName() const;
     vector<int> getEnrolledCourses() const;
-    bool takesCourse(Course);
-    bool takeCourse(Course);
-    void dropCourse(Course);
+    bool takesCourse(Course course);
+    bool takeCourse(Course course);
+    void dropCourse(Course course);
     void printDetails();
 
 };

@@ -24,7 +24,8 @@ using namespace std;
         cin>>number_courses;
         for(int i=0;i<number_courses;i++){
             string name;
-            int credit, id;
+            int credit;
+            int id;
             cin>>id>>name>>credit;
             Course c1(id, name, credit);
             myLMS.addCourse(c1);

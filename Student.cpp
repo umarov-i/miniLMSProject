@@ -10,11 +10,11 @@ Student::Student(int id, string name) {
     this->name = name;
 }
 
-int Student::getId () const {
+int Student::getId () const{
     return id;
 }
 
-string Student::getName() const {
+string Student::getName() const{
     return name;
 }
 
@@ -32,22 +32,19 @@ bool Student::takesCourse(Course course) {
 }
 
 bool Student::takeCourse(Course course) {
-    if(takesCourse(course)) {
-        return false;
-    }
-        if(course.getCredits() <= MAX_ALLOWED_CREDITS) {
+        if(!takesCourse(course)) {
             enrolledCourses.push_back(course.getId());
-            return true;
         }
-    return false;
+    return true;
 }
 
 void Student::dropCourse(Course course) {
     int courseId = course.getId();
-    enrolledCourses.erase(
-        remove(enrolledCourses.begin(), enrolledCourses.end(), courseId),
-        enrolledCourses.end()
-    );
+    for (int i = 0; i < enrolledCourses.size(); i++) {
+        if (enrolledCourses[i] == courseId) {
+            enrolledCourses.erase(enrolledCourses.begin() + i);
+        }
+    }
 }
 
 void Student::printDetails() {

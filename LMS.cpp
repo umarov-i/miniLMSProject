@@ -10,11 +10,11 @@ LMS::LMS(string name) {
 }
 
 void LMS::addStudent(Student student) {
-    students.push_back(student);
+    this->students.push_back(student);
 }
 
 void LMS::addCourse(Course course) {
-    courses.push_back(course);
+    this->courses.push_back(course);
 }
 
 void LMS::addStudentToCourse(int student_id,int course_id) {
@@ -33,12 +33,13 @@ void LMS::addStudentToCourse(int student_id,int course_id) {
 }
 
 void LMS::printDetails() {
-    cout << "LMS Name: " << name << endl;
+    cout << "LMS Name: " << this->name << endl;
+    cout << "Students:" << endl;
     for (int i = 0; i < students.size(); i++) {
-        cout << "Student ID: " << students[i].getId() << endl;
+        students.at(i).printDetails();
     }
     for (int i = 0; i < courses.size(); i++) {
-        cout << "Course ID: " << courses[i].getId() << endl;
+        courses.at(i).printDetails();
     }
 
 }
