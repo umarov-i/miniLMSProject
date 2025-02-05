@@ -37,6 +37,7 @@ void LMS::printDetails() {
     for (int i = 0; i < students.size(); i++) {
         students.at(i).printDetails();
     }
+    cout << "Courses:" << endl;
     for (int i = 0; i < courses.size(); i++) {
         courses.at(i).printDetails();
     }
