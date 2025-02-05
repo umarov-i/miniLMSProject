@@ -23,8 +23,8 @@ using namespace std;
         int number_courses;
         cin>>number_courses;
         for(int i=0;i<number_courses;i++){
-            string id,name;
-            int credit;
+            string name;
+            int credit, id;
             cin>>id>>name>>credit;
             Course c1(id, name, credit);
             myLMS.addCourse(c1);
@@ -34,7 +34,7 @@ using namespace std;
         cin >> n;
         for(int i=0;i<n;i++){
             int student_id;
-            string course_id;
+            int course_id;
             cin>>student_id>>course_id;
             myLMS.addStudentToCourse(student_id, course_id);
         }
