@@ -17,15 +17,13 @@ void LMS::addCourse(Course course) {
     courses.push_back(course);
 }
 
-void LMS::addStudentToCourse(int student_id,string course_id) {
+void LMS::addStudentToCourse(int student_id,int course_id) {
     for (int i = 0; i < this->courses.size(); i++) {
-        if (course_id == this->courses[i].getId()) {
+        if (courses[i].getId() == course_id) {
             for (int j = 0; j < this->students.size(); j++) {
                 if (student_id == this->students[j].getId()) {
-                    if(courses[i].addStudent(students[j]) && !students[j].takeCourse(courses[i])) {
-                        courses[i].dropStudent(students[j]);
-                    }
-
+                    courses[i].addStudent(students[j]);
+                    students.erase(students.begin() + j);
                 }
 
             }

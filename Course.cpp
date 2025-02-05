@@ -5,13 +5,13 @@
 #include <algorithm>
 using namespace std;
 
-Course::Course(string id, string name, int credits) {
+Course::Course(int id, string name, int credits) {
     this->id = id;
     this->name = name;
     this->credits = credits;
 }
 
-string Course::getId () const {
+int Course::getId () const {
     return id;
 }
 

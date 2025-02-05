@@ -24,7 +24,7 @@ vector<int> Student::getEnrolledCourses() const {
 
 bool Student::takesCourse(Course course) {
     for (int i = 0; i < enrolledCourses.size(); i++) {
-        if (enrolledCourses[i] == stoi(course.getId())) {
+        if (enrolledCourses[i] == course.getId()) {
             return true;
         }
     }
@@ -36,14 +36,14 @@ bool Student::takeCourse(Course course) {
         return false;
     }
         if(course.getCredits() <= MAX_ALLOWED_CREDITS) {
-            enrolledCourses.push_back(stoi(course.getId()));
+            enrolledCourses.push_back(course.getId());
             return true;
         }
     return false;
 }
 
 void Student::dropCourse(Course course) {
-    int courseId = stoi(course.getId());
+    int courseId = course.getId();
     enrolledCourses.erase(
         remove(enrolledCourses.begin(), enrolledCourses.end(), courseId),
         enrolledCourses.end()

@@ -16,7 +16,7 @@ public:
 
     void addStudent(Student);
     void addCourse(Course);
-    void addStudentToCourse(int student_id, string course_id);
+    void addStudentToCourse(int student_id, int course_id);
     void printDetails();
 };
 

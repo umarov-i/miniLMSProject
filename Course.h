@@ -7,14 +7,14 @@ class Student;
 using namespace std;
 
 class Course {
-    string id;
+    int id;
     int credits;
     string name;
     vector<int> students;
 public:
-    Course(string id, string name, int credits);
+    Course(int id, string name, int credits);
 
-    string getId() const;
+    int getId() const;
     string getName() const;
     int getCredits() const;
     bool hasStudent(Student);
