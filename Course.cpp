@@ -40,13 +40,6 @@ bool Course::addStudent(Student student) {
     return false;
 }
 
-void Course::dropStudent(Student student) {
-    for (int i = 0; i < students.size(); i++) {
-        if (students[i] == student.getId()) {
-            students.erase(students.begin() + i);
-        }
-    }
-}
 
 void Course::printDetails() {
     cout << "Course ID: " << id << ", Name: " << name << ", Credits: " << credits << endl;

@@ -22,7 +22,6 @@ public:
     int getCredits() const;
     bool hasStudent(Student student);
     bool addStudent(Student student);
-    void dropStudent(Student student);
     void printDetails();
 };
 
